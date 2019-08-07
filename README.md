@@ -20,7 +20,6 @@ In this assessment you will be exploring two datasets: Pokemon and Quotes.
 
 ```python
 # import the necessary libraries
-
 import requests
 import json
 import pandas as pd
@@ -174,9 +173,6 @@ Create your class below with the correct syntax, including an __init__ method.
 
 ```python
 # Your code here
-
-
-
 ```
 
 
