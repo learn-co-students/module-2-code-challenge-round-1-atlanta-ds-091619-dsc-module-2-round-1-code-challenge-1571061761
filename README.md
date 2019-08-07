@@ -51,9 +51,10 @@ results
     - Weight
     - Height
     - Types
-    - Abilities
 
-For `Types` and `Abilities`, you might want to write helper functions to have each attribute just be a list of types and a list of abilities. Your output should look like this:
+The `types` attribute is going to require some manipulation of the data. The API does not respond with the data in the desired format. You might want to write helper functions to convert the format the API responds with to a `list` of `strings`. 
+
+Your output should look like this:
 
 ```
 {'id': 1, 
@@ -61,16 +62,12 @@ For `Types` and `Abilities`, you might want to write helper functions to have ea
 'base_experience': 64, 
 'weight': 69, 
 'height': 7, 
-'types': ['poison', 'grass'], 
-'abilities': ['chlorophyll', 'overgrow']}
-
+'types': ['poison', 'grass']}
 ```
-    
-
 
 
 ```python
-# you may define helper functions for types and abilities here
+# you may define any helper functions here
 
 ```
 
@@ -91,9 +88,9 @@ def get_pokedata(url):
 
 ```
 
-### Pagination
+### Processing All The Data
 
-2. Get the same information for the first **151** Pokemon as a list of dictionaries ordered by Pokemon ID. Print the first and last elements of the list. (Hint: Use pagination) Your output should save the list to a variable and look like this:
+2. Get the same information for the first **151** Pokemon as a list of dictionaries ordered by Pokemon ID. Print the first and last elements of the list. Your output should save the list to a variable and look like this:
 
 ```
 [{'id': 1, 
@@ -101,16 +98,13 @@ def get_pokedata(url):
 'base_experience': 64, 
 'weight': 69, 
 'height': 7, 
-'types': ['poison', 'grass'], 
-'abilities': ['chlorophyll', 'overgrow']}, 
+'types': ['poison', 'grass']}, 
 {'id': 2, 
 'name': 'ivysaur', 
 'base_experience': 142, 
 'weight': 130, 
 'height': 10, 
-'types': ['poison', 'grass'], 
-'abilities': ['chlorophyll', 'overgrow']}, ... ]
-
+'types': ['poison', 'grass']}, ... ]
 ```
 
 
@@ -152,10 +146,6 @@ We're going to use the data gathered in the previous section on APIs for this se
     - Weight
     - Height
     - Types
-    - Abilities
-    
-
-
 
 
 ```python
@@ -202,7 +192,6 @@ def print_pokeinfo(pokemon_object):
           'Weight: ' + str(o.weight) + '\n' +
           'Height: ' + str(o.height) + '\n' +
           'Types: ' + str(o.types) + '\n' +
-          'Abilities: ' + str(o.abilities) + '\n'
          )
     
 print_pokeinfo(bulbasaur)
