@@ -40,7 +40,7 @@ results = requests.get(url).json()['results']
 results
 ```
 
-[Read the documentation here](https://pokeapi.co/) for information on navigating this API and use the API to obtain data to answer the following questions.
+[Read the documentation here](https://pokeapi.co/docs/v2.html) for information on navigating this API and use the API to obtain data to answer the following questions.
 
 ### Accessing Data
 
@@ -76,11 +76,12 @@ For `Types` and `Abilities`, you might want to write helper functions to have ea
 
 
 ```python
-
 def get_pokedata(url):
     
     """
     url is a string of the URL that will get you the relevant info from the API
+    for a single pokemon. 
+    Example: "https://pokeapi.co/api/v2/pokemon/1/"
     
     this function should return the dictionary for ONE pokemon
     
@@ -259,30 +260,35 @@ cnx = sqlite3.connect('data/pokemon.db')
 
 
 ```python
+# q1: query all columns from Pokemon the Pokemon that have base_experience above 200
 q1 = ''
 pd.read_sql(q1, cnx)
 ```
 
 
 ```python
+# q2: query the id, name, type1 and type2 of Pokemon that have water types as either their first or second type
 q2 = ''
 pd.read_sql(q2, cnx)
 ```
 
 
 ```python
+# q3: query the average weight of Pokemon by their first type in descending order
 q3 = ''
 pd.read_sql(q3, cnx)
 ```
 
 
 ```python
+# q4: query the Pokemon name, Pokemon type2, and what type2 has "2xdamage" to
 q4 = ''
 pd.read_sql(q4, cnx)
 ```
 
 
 ```python
+# q5: query the top 5 most common type1s, the minimum height, maximum height, minimum weight and maximum weight of pokemon with those type1s, and what associated type they do "0.5xdamage" to
 q5 = ''
 pd.read_sql(q5, cnx)
 ```
